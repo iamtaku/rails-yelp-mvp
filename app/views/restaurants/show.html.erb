@@ -1,1 +1,18 @@
-show.html.erb
+ <div class="container">
+ <div class="card-product">
+    <img src="https://picsum.photos/150" />
+    <div class="card-product-infos">
+      <h2><%= @restaurant.name %></h2>
+      <p><i class="fas fa-map-pin"></i> <%= @restaurant.address %></p>
+      <p><i class="fas fa-utensils"></i> <%= @restaurant.category %></p>
+      <p><i class="fas fa-phone"></i> <%= @restaurant.phone_number %></p>
+    </div>
+  </div>
+    <h2>Reviews</h2>
+    <%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %>
+    <ul>
+      <% @reviews.each do |review| %>
+        <li><%= review.content %> <%= '⭐️' * review.rating %></li>
+      <% end %>
+    </ul>
+</div>

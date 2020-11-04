@@ -1,5 +1,12 @@
-<ul>
 <% @restaurants.each do |restaurant| %>
-  <li><%= restaurant.name %></li>
+  <div class="card-product">
+    <img src="https://picsum.photos/150" />
+    <div class="card-product-infos">
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+      <p><i class="fas fa-map-pin"></i> <%= restaurant.address %></p>
+      <p><i class="fas fa-utensils"></i> <%= restaurant.category %></p>
+    </div>
+  </div>
 <% end %>
-</ul>
+
+
